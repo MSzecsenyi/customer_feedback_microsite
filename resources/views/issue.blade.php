@@ -10,7 +10,7 @@
         <form class="flex flex-col w-full p-10 px-8 pt-6 mx-auto my-6 mb-4 transition duration-500 ease-in-out transform bg-white border rounded-lg lg:w-1/2 ">
         <div class="mx-auto">
             <img class="mx-auto max-w-3/4 lg:max-w-1/3" src={{ $image }}>
-            <h1 class="text-3xl font-bold text-cyan-500">{{ $companyname }} hibabejelentő</h1>
+            <h1 class="text-3xl font-bold text-center text-cyan-500">{{ $companyname }} hibabejelentő</h1>
         </div>
         <div class="relative mt-4">
             <label for="name" class="text-base leading-7 text-{{ $color }}Gray-500">Projekt kiválasztása</label>
@@ -29,12 +29,28 @@
             <input type="text" id="name" name="name" placeholder="" class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $color }}-600 ring-offset-2" required="">
           </div>
 
+          <div class="md:flex md:justify-between">
+            <div class="relative pt-4">
+                <label for="name" class="text-base leading-7 text-{{ $color }}Gray-500">Email</label>
+                <input type="text" id="name" name="name" placeholder="" class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $color }}-600 ring-offset-2" required="">
+            </div>
 
+            <div class="relative pt-4">
+                <label for="name" class="text-base leading-7 text-{{ $color }}Gray-500">Telefonszám</label>
+                <input type="text" id="name" name="name" placeholder="" class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $color }}-600 ring-offset-2" required="">
+            </div>
+          </div>
+
+
+          <div class="relative pt-4">
+            <label for="name" class="text-base leading-7 text-{{ $color }}Gray-500">Elhelyezkedés</label>
+            <input type="text" id="name" name="name" placeholder="" class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $color }}-600 ring-offset-2" required="">
+          </div>
 
           <div class="flex flex-wrap mt-4 mb-6 -mx-3">
             <div class="w-full px-3">
               <label class="text-base leading-7 text-{{ $color }}Gray-500" for="description">Hiba leírása</label>
-              <textarea class="w-full h-32 px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-white rounded-lg text-{{ $color }}Gray-500 focus:outline-none focus:border-{{ $color }}-600 focus:ring-2 focus:ring-{{ $color }}-600 apearance-none autoexpand" id="description" type="text" name="description" placeholder="" required=""></textarea>
+              <textarea class="w-full h-18 px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-white rounded-lg text-{{ $color }}Gray-500 focus:outline-none focus:border-{{ $color }}-600 focus:ring-2 focus:ring-{{ $color }}-600 apearance-none autoexpand" id="description" type="text" name="description" placeholder="" required=""></textarea>
             </div>
           </div>
 
@@ -42,9 +58,9 @@
 
           <section class="flex flex-col w-full h-full p-1 overflow-auto">
             <label for="name" class="mb-5 text-base leading-7 text-{{ $color }}Gray-500">Kép beküldése</label>
-            <header class="flex flex-col items-center justify-center py-12 text-base transition duration-500 ease-in-out transform bg-white border border-dashed rounded-lg text-{{ $color }}Gray-500 focus:border-{{ $color }}-600 focus:outline-none focus:ring-2 focus:ring-{{ $color }}-600 ring-offset-2">
-              <p class="flex flex-wrap justify-center mx-8 mb-3 text-base leading-7 text-{{ $color }}Gray-500">
-                <span>Hozzáadáshoz húzza ide az állományokat, vagy</span>
+            <header class="flex flex-col items-center justify-center py-4 text-base transition duration-500 ease-in-out transform bg-white border border-dashed rounded-lg text-{{ $color }}Gray-500 focus:border-{{ $color }}-600 focus:outline-none focus:ring-2 focus:ring-{{ $color }}-600 ring-offset-2">
+              <p class="flex flex-wrap justify-center md:mx-8 md:mb-3 text-base text-center leading-7 text-{{ $color }}Gray-500">
+                <div class="text-center">Hozzáadáshoz húzza ide az állományokat, vagy</div>
               </p>
               <button class="w-auto px-2 py-1 my-2 mr-2 transition duration-500 ease-in-out transform border rounded-md text-{{ $color }}Gray-500 hover:text-{{ $color }}Gray-600 text-md focus:outline-none focus:ring-2 focus:ring-{{ $color }}-600 ring-offset-2 hover:bg-gray-100"> Fájl feltöltése </button>
             </header>
