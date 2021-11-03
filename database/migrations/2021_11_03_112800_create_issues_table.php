@@ -16,6 +16,15 @@ class CreateIssuesTable extends Migration
         Schema::create('issues', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('company_id')->constrained('companies')->onDelete('cascade')->primary();
+            $table->foreignId('project_id')->constrained('projects')->onDelete('cascade')->primary();
+            $table->string('issuer_ip');
+            $table->string('title');
+            $table->string('description');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('location');
+            $table->string('photo');
         });
     }
 
