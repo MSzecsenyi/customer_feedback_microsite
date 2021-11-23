@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{id}', [IssueController::class, 'IssueIndex'])->name('home');
+Route::get('/{companyId}', [IssueController::class, 'IssueIndex'])->name('home');
+Route::post('/{companyId}', [IssueController::class, 'storeIssue'])->name('store-issue');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

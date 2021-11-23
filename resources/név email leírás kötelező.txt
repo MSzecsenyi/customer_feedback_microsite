@@ -1,0 +1,7 @@
+név email leírás kötelező
+adatok rögzítéséhez email megerrősítés kell, ezt külön oldalon írjuk
+live project search 
+
+report issue helyett tovább
+mikorra kellmilyen technológia
+mennyire működjön

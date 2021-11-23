@@ -1,0 +1,23 @@
+Issue reporting screen
+
+Project
+
+Choose a project
+
+First Name
+
+Last Name
+
+Email
+
+Location
+
+Issue description
+
+Photo
+
+Drag your files here, or
+
+Upload
+
+Next
