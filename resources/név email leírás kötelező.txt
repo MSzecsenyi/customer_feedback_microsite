@@ -1,7 +1,13 @@
 név email leírás kötelező
 adatok rögzítéséhez email megerrősítés kell, ezt külön oldalon írjuk
-live project search 
+live project search
 
 report issue helyett tovább
 mikorra kellmilyen technológia
 mennyire működjön
+
+Kérdések:
+    Mik a kötelező mezők a formon?
+    maximum hány karakter lehessen a hibaleírás?
+    milyen végpontokon lehessen elérni a cégeket/projekteket?
+        pl ~/74gf7ds9f8g7fdsg78/f8sd96d7asf6ads87fdsgds8 vagy ~/dekpol/projectname

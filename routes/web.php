@@ -15,10 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/{companyId}/{projectId?}', [IssueController::class, 'IssueIndex'])->name('home');
-Route::post('/{companyId}', [IssueController::class, 'storeIssue'])->name('store-issue');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::post('/{companyId}', [IssueController::class, 'storeIssue'])->name('store-issue');
 
 require __DIR__.'/auth.php';

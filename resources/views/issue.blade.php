@@ -20,9 +20,10 @@
     @endif
     <div class="container items-center px-5 mx-auto opacity-90 lg:px-20">
         <form method="post"
-            action="{{ route('store-issue', ['companyId' => $data->company_name]) }}"
+            action="{{ route('store-issue', ['companyId' => $data->id]) }}"
             class="flex flex-col w-full p-10 px-8 pt-6 mx-auto my-6 mb-4 transition duration-500 ease-in-out transform bg-white border rounded-lg lg:w-1/2 ">
             @csrf
+            <input type="hidden" name="company_id" value="{{ $data->id }}" />
             <div class="mx-auto">
                 <img class="mx-auto my-8 max-w-3/4 lg:max-w-1/3" src={{ $data->logo }}>
                 <h1 class="text-3xl font-bold md:text-center text-cyan-500">{{ $data->company_name }} ekran zgłoszenia
@@ -30,8 +31,8 @@
                 </h1>
             </div>
             <div class="relative mt-4">
-                <label for="name" class="text-base leading-7">Projekt</label>
-                <select required=''
+                <label for="project" class="text-base leading-7">Projekt</label>
+                <select required='' name='project' id='project'
                     class="w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $data->color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $data->color }}-600 ring-offset-2">
                     <option value="{{ $selected_project['id'] }}" class="rounded-lg">
                         {{ $selected_project['name'] }}
@@ -44,42 +45,71 @@
 
             <div class="md:space-x-4 md:flex md:justify-between">
                 <div class="relative pt-4">
-                    <label for="name" class="text-base leading-7">Imię</label>
-                    <input type="text" id="name" name="name" placeholder=""
+                    <label for="first_name" class="text-base leading-7">Imię</label>
+                    <input type="text" id="first_name" name="first_name" placeholder=""
                         class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $data->color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $data->color }}-600 ring-offset-2"
-                        required="">
+                        required="" value="{{ old('first_name') }}">
                 </div>
+                @error('first_name')
+                    <div class="text-red-700">
+                        {{ $message }}
+                    </div>
+                @enderror
+
                 <div class="relative pt-4">
-                    <label for="name" class="text-base leading-7">Nazwisko</label>
-                    <input type="text" id="name" name="name" placeholder=""
+                    <label for="last_name" class="text-base leading-7">Nazwisko</label>
+                    <input type="text" id="last_name" name="last_name" placeholder=""
                         class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $data->color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $data->color }}-600 ring-offset-2"
-                        required="">
+                        required="" value="{{ old('last_name') }}">
                 </div>
             </div>
+            @error('last_name')
+                <div class="text-red-700">
+                    {{ $message }}
+                </div>
+            @enderror
 
             <div class="relative pt-4">
-                <label for="name" class="text-base leading-7">Email</label>
-                <input type="text" id="name" name="name" placeholder=""
+                <label for="email" class="text-base leading-7">Email</label>
+                <input type="text" id="email" name="email" placeholder=""
                     class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $data->color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $data->color }}-600 ring-offset-2"
-                    required="">
+                    required="" value="{{ old('email') }}">
             </div>
+            @error('email')
+                <div class="text-red-700">
+                    {{ $message }}
+                </div>
+            @enderror
 
             <div class="relative pt-4">
-                <label for="name" class="text-base leading-7">Lokalizacja usterki</label>
-                <input type="text" id="name" name="name" placeholder=""
+                <label for="location" class="text-base leading-7">Lokalizacja usterki</label>
+                <input type="text" id="location" name="location" placeholder=""
                     class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg focus:border-{{ $data->color }}-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-{{ $data->color }}-600 ring-offset-2"
-                    required="">
+                    required="" value="{{ old('location') }}">
             </div>
+            @error('location')
+                <div class="text-red-700">
+                    {{ $message }}
+                </div>
+            @enderror
+
             <div class="flex flex-wrap mt-4 mb-6 -mx-3">
                 <div class="w-full px-3">
                     <label class="text-base leading-7" for="description">Opis usterki</label>
                     <textarea
                         class="w-full h-18 px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-white rounded-lg focus:outline-none focus:border-{{ $data->color }}-600 focus:ring-2 focus:ring-{{ $data->color }}-600 apearance-none autoexpand"
-                        id="description" type="text" name="description" placeholder="" required=""></textarea>
+                        id="description" type="text" name="description" placeholder=""
+                        required="">{{ old('description') }}</textarea>
                 </div>
             </div>
+            @error('description')
+                <div class="text-red-700">
+                    {{ $message }}
+                </div>
+            @enderror
+
             <section class="flex flex-col w-full h-full p-1 overflow-auto">
-                <label for="name" class="mb-5 text-base leading-7">Zdjęcie</label>
+                <label for="file" class="mb-5 text-base leading-7">Zdjęcie</label>
                 <header
                     class="flex flex-col items-center justify-center py-4 text-base transition duration-500 ease-in-out transform bg-white border border-dashed rounded-lg focus:border-{{ $data->color }}-600 focus:outline-none focus:ring-2 focus:ring-{{ $data->color }}-600 ring-offset-2">
                     <p class="flex flex-wrap justify-center text-base leading-7 text-center md:mx-8 md:mb-3">
