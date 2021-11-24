@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProjectFactory extends Factory
@@ -13,9 +14,12 @@ class ProjectFactory extends Factory
      */
     public function definition()
     {
+        $project_name = $this->faker->word();
+
         return [
-            'company_id' => 1,
-            'project_name' => 'project'
+            'company_id' => $this->faker->numberBetween(1,4),
+            'project_name' => $project_name,
+            'project_url' => $project_name,
         ];
     }
 }

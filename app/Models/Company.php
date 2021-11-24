@@ -11,5 +11,21 @@ class Company extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'url',
+        'color',
+        'logo',
+        'company_name',
+        'image'
+    ];
 
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    public function issues()
+    {
+        return $this->hasMany(Issue::class);
+    }
 }

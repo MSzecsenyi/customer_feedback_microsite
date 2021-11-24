@@ -18,7 +18,6 @@ class CompanyFactory extends Factory
             'color' => "yellow",
             'logo' => "logo",
             'company_name' => 'Cordia',
-            'image' => "image",
         ];
     }
 }

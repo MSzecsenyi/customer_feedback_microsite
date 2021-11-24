@@ -20,6 +20,8 @@ class CreateCompaniesTable extends Migration
             $table->string('color');
             $table->string('logo');
             $table->string('company_name');
+            $table->string('company_image')->default('Images/family_1.jpg');
+            $table->softDeletes();
         });
     }
 

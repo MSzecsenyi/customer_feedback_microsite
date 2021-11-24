@@ -19,7 +19,7 @@ class CompanySeeder extends Seeder
             'color' => "yellow",
             'logo' => "https://www.bauapp.com/wp-content/uploads/2020/10/cordiablack1-300x70.png",
             'company_name' => 'Cordia',
-            'image' => "1.jpg",
+            'company_image' => "Images/1.jpg",
         ]);
 
         Company::factory()->create([
@@ -27,7 +27,7 @@ class CompanySeeder extends Seeder
             'color' => "green",
             'logo' => "https://www.bauapp.com/wp-content/uploads/2020/10/metrodoom-300x126.png",
             'company_name' => 'Metrodom',
-            'image' => "2.jpg",
+            'company_image' => "Images/2.jpg",
         ]);
 
         Company::factory()->create([
@@ -35,7 +35,6 @@ class CompanySeeder extends Seeder
             'color' => "red",
             'logo' => "https://www.bauapp.com/wp-content/uploads/2020/10/WHB_Logo_RGB-600x358-1-300x179.png",
             'company_name' => 'WHB',
-            'image' => "3.jpg",
         ]);
 
         Company::factory()->create([
@@ -43,7 +42,7 @@ class CompanySeeder extends Seeder
             'color' => "blue",
             'logo' => "https://dekpol.pl/wp-content/uploads/2018/09/logo_dekpol_pl.svg",
             'company_name' => 'Dekpol',
-            'image' => "2.jpg",
+            'company_image' => "Images/2.jpg",
         ]);
     }
 }

@@ -18,6 +18,8 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->foreignId('company_id')->constrained('companies')->onDelete('cascade')->primary();
             $table->string('project_name');
+            $table->string('project_image')->nullable();
+            $table->string('project_url');
         });
     }
 
