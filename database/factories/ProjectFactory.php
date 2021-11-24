@@ -14,7 +14,8 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'company_id' => 1,
+            'project_name' => 'project'
         ];
     }
 }

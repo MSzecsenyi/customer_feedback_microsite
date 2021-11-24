@@ -14,7 +14,11 @@ class CompanyFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'url' => "cordia",
+            'color' => "yellow",
+            'logo' => "logo",
+            'company_name' => 'Cordia',
+            'image' => "image",
         ];
     }
 }
