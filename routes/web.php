@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{companyId}/{projectId?}', [IssueController::class, 'IssueIndex'])->name('home');
+Route::get('{locale}/{companyId}/{projectId?}', [IssueController::class, 'IssueIndex'])->name('home');
 
-Route::post('/{companyId}', [IssueController::class, 'storeIssue'])->name('store-issue');
+Route::post('/', [IssueController::class, 'storeIssue'])->name('store-issue');
 
 require __DIR__.'/auth.php';

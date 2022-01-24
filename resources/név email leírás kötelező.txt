@@ -6,6 +6,11 @@ report issue helyett tovább
 mikorra kellmilyen technológia
 mennyire működjön
 
+kép - projektenként
+projektek neve
+jogi szöveg
+ismerkedő szöveg
+
 Kérdések:
     Mik a kötelező mezők a formon?
     maximum hány karakter lehessen a hibaleírás?
